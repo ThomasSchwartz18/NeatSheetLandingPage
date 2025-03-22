@@ -28,7 +28,7 @@
             <form action="/signup" method="POST" class="flex flex-col sm:flex-row gap-4">
                 {{ form.hidden_tag() }}
                 {{ form.email(class="flex-1 p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]", placeholder="Enter your email") }}
-                <div class="g-recaptcha" data-sitekey="6Lda7PwqAAAAAOXWgG0srSxJ47FmwcDjOb7f3sqQ"></div>
+                <!-- <div class="g-recaptcha" data-sitekey="6Lda7PwqAAAAAOXWgG0srSxJ47FmwcDjOb7f3sqQ"></div> -->
                 <div class="glow-border">
                     <button type="submit" class="btn-primary">Join the Waitlist</button>
                 </div>
@@ -99,7 +99,7 @@
         <form action="/signup" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             {{ form.hidden_tag() }}
             {{ form.email(class="flex-1 p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white", placeholder="Enter your email") }}
-            <div class="g-recaptcha" data-sitekey="6Lda7PwqAAAAAOXWgG0srSxJ47FmwcDjOb7f3sqQ"></div>
+            <!-- <div class="g-recaptcha" data-sitekey="6Lda7PwqAAAAAOXWgG0srSxJ47FmwcDjOb7f3sqQ"></div> -->
             <button type="submit" class="btn-primary bg-white text-[#1e3a8a]">Join Now</button>
         </form>
         {% if success %}
