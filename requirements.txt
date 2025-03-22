@@ -3,3 +3,5 @@ flask
 gunicorn
 requests
 flask-wtf
+supabase
+email_validator
