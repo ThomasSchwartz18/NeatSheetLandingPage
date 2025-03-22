@@ -1,0 +1,5 @@
+Flask
+flask
+gunicorn
+requests
+flask-wtf
