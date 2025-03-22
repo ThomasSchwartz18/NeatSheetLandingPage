@@ -31,10 +31,10 @@ def signup():
         try:
             # Insert the email into the "waitlist" table in Supabase
             response = supabase.table("waitlist").insert({"email": email}).execute()
-            if response.status_code == 201:
+            print(response)  # Optional: log the full response for debugging
+            if not response.error:
                 return redirect(url_for('index', success=True))
             else:
-                # You can add more detailed error handling based on response data
                 return f"Error saving email: {response.error}", 500
         except Exception as e:
             return f"Error saving email: {str(e)}", 500
