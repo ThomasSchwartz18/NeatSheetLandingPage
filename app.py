@@ -29,16 +29,18 @@ def signup():
     if form.validate_on_submit():
         email = form.email.data
         recaptcha_response = request.form.get('g-recaptcha-response')
-        print(f"Received email: {email}")
-
-        # Verify reCAPTCHA
         if not recaptcha_response:
             return "Please complete the CAPTCHA", 400
+
+        # Retrieve the secret key from environment variables
+        recaptcha_secret = os.environ.get('RECAPTCHA_SECRET')
+        if not recaptcha_secret:
+            return "Server misconfiguration", 500
+
         verify_url = 'https://www.google.com/recaptcha/api/siteverify'
-        payload = {'secret': 'YOUR_SECRET_KEY', 'response': recaptcha_response}
+        payload = {'secret': recaptcha_secret, 'response': recaptcha_response}
         response = requests.post(verify_url, data=payload)
         result = response.json()
-
         if not result.get('success'):
             return "CAPTCHA verification failed", 400
 
@@ -47,7 +49,6 @@ def signup():
                 cursor = conn.cursor()
                 cursor.execute('INSERT OR IGNORE INTO waitlist (email) VALUES (?)', (email,))
                 conn.commit()
-                print("Email saved!")
             return redirect(url_for('index', success=True))
         except sqlite3.Error as e:
             return f'Error saving email: {e}', 500
