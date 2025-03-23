@@ -3,22 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeatSheet - AI-Powered Excel Magic</title>
+    <title>NeatSheet - Excel Formatting, AI-Powered</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7GZRYJ2VZ"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-S7GZRYJ2VZ');
-    </script>    
 </head>
 <body>
     <!-- Header -->
@@ -32,64 +20,67 @@
 
     <!-- Hero Section -->
     <section class="hero-bg text-white py-20 px-6 text-center animate-on-load">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Excel Chaos? Let AI Fix It.</h1>
-        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Upload your sheet, tell NeatSheet what to do, and watch it apply functions—then save it as a template. No formulas, no fuss.</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tame Excel Chaos with Smart Formatting</h1>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+            NeatSheet transforms your spreadsheets with powerful formatting tools and an AI Assistant that turns your words into Excel functions. Format once, save as a template, and automate forever.
+        </p>
         <div class="max-w-md mx-auto">
             <form action="/signup" method="POST" class="flex flex-col sm:flex-row gap-4">
-                {{ form.hidden_tag() }}
-                {{ form.email(class="flex-1 p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]", placeholder="Enter your email") }}
-                <!-- <div class="g-recaptcha" data-sitekey="6Lda7PwqAAAAAOXWgG0srSxJ47FmwcDjOb7f3sqQ"></div> -->
+                <input type="email" name="email" placeholder="Enter your email" class="flex-1 p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]" required>
                 <div class="glow-border">
                     <button type="submit" class="btn-primary">Join the Waitlist</button>
                 </div>
             </form>
-            {% if success %}
-                <p class="text-green-400 text-sm mt-4">Thanks for joining the waitlist!</p>
-            {% endif %}
-            <p class="text-sm mt-4">Get a <strong>1-month free trial</strong> when we launch. Limited spots!</p>
+            <p class="text-sm mt-4">Claim a <strong>1-month free trial</strong> at launch. Spots are limited!</p>
         </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="py-16 px-6 scroll-animate">
-        <h2 class="text-3xl font-bold text-center mb-12">Why NeatSheet?</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">Why Choose NeatSheet?</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div class="feature-card animate-on-load" style="animation-delay: 0.1s;">
-                <svg class="w-8 h-8 text-[#1e3a8a] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                <h3 class="text-xl font-semibold mb-2">AI Magic</h3>
-                <p class="text-gray-600">Describe what you want—“sum sales, highlight big wins”—and let AI handle the rest.</p>
+                <svg class="w-8 h-8 text-[#1e3a8a] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">AI Excel Assistant</h3>
+                <p class="text-gray-600">Tell it “sum sales” or “highlight negatives”—the AI applies the right functions for you.</p>
             </div>
             <div class="feature-card animate-on-load" style="animation-delay: 0.2s;">
-                <svg class="w-8 h-8 text-[#1e3a8a] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                <h3 class="text-xl font-semibold mb-2">Reusable Templates</h3>
-                <p class="text-gray-600">Save your tweaks once, reuse forever—perfect for monthly reports.</p>
+                <svg class="w-8 h-8 text-[#1e3a8a] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">One-and-Done Templates</h3>
+                <p class="text-gray-600">Apply functions once, save the template, and drag-drop it on any sheet—automation made simple.</p>
             </div>
             <div class="feature-card animate-on-load" style="animation-delay: 0.3s;">
-                <svg class="w-8 h-8 text-[#1e3a8a] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <h3 class="text-xl font-semibold mb-2">Time Saver</h3>
-                <p class="text-gray-600">Cut Excel grunt work by 80%—focus on results, not formulas.</p>
+                <svg class="w-8 h-8 text-[#1e3a8a] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">Time Saved, Chaos Gone</h3>
+                <p class="text-gray-600">Slash formatting time by 80%—focus on insights, not spreadsheets.</p>
             </div>
         </div>
     </section>
 
     <!-- How It Works Section -->
     <section id="how-it-works" class="py-16 px-6 bg-gray-100 scroll-animate">
-        <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">How NeatSheet Works</h2>
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div class="animate-on-load" style="animation-delay: 0.1s;">
                 <div class="text-4xl font-bold text-[#1e3a8a] mb-4">1</div>
-                <h3 class="text-xl font-semibold mb-2">Upload</h3>
-                <p class="text-gray-600">Drop your Excel file into NeatSheet.</p>
+                <h3 class="text-xl font-semibold mb-2">Upload Your Sheet</h3>
+                <p class="text-gray-600">Drop your Excel file into NeatSheet—any format, any mess.</p>
             </div>
             <div class="animate-on-load" style="animation-delay: 0.2s;">
                 <div class="text-4xl font-bold text-[#1e3a8a] mb-4">2</div>
-                <h3 class="text-xl font-semibold mb-2">Describe</h3>
-                <p class="text-gray-600">Tell it what to do—“sum this, sort that.”</p>
+                <h3 class="text-xl font-semibold mb-2">Format with AI</h3>
+                <p class="text-gray-600">Say what you need—“sort by date, total profits”—and watch the AI apply it.</p>
             </div>
             <div class="animate-on-load" style="animation-delay: 0.3s;">
                 <div class="text-4xl font-bold text-[#1e3a8a] mb-4">3</div>
-                <h3 class="text-xl font-semibold mb-2">Download</h3>
-                <p class="text-gray-600">Get your formatted sheet, templated and ready.</p>
+                <h3 class="text-xl font-semibold mb-2">Save and Reuse</h3>
+                <p class="text-gray-600">Turn your setup into a template—drag, drop, done for every sheet.</p>
             </div>
         </div>
     </section>
@@ -97,48 +88,37 @@
     <!-- Testimonial Section -->
     <section class="py-16 px-6 scroll-animate">
         <div class="max-w-2xl mx-auto text-center animate-on-load">
-            <p class="text-lg italic text-gray-600 mb-4">“NeatSheet has the opportunity to streamline my weekly Excel reports.”</p>
+            <p class="text-lg italic text-gray-600 mb-4">
+                “NeatSheet has the opportunity to cut my weekly reporting from hours to minutes with templates I’ll never rebuild.”
+            </p>
             <p class="font-semibold">— Sarah K., Small Business Owner</p>
         </div>
     </section>
 
     <!-- CTA Footer -->
     <footer class="bg-[#1e3a8a] text-white py-12 px-6 text-center animate-on-load">
-        <h2 class="text-3xl font-bold mb-4">Ready to Simplify Excel?</h2>
-        <p class="text-lg mb-8">Join the waitlist for a <strong>1-month free trial</strong> at launch.</p>
+        <h2 class="text-3xl font-bold mb-4">Simplify Excel, Once and For All</h2>
+        <p class="text-lg mb-8">
+            Join the waitlist for a formatting tool that works smarter—with AI and templates you’ll use forever.
+        </p>
         <form action="/signup" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            {{ form.hidden_tag() }}
-            {{ form.email(class="flex-1 p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white", placeholder="Enter your email") }}
-            <!-- <div class="g-recaptcha" data-sitekey="6Lda7PwqAAAAAOXWgG0srSxJ47FmwcDjOb7f3sqQ"></div> -->
+            <input type="email" name="email" placeholder="Enter your email" class="flex-1 p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white" required>
             <button type="submit" class="btn-primary bg-white text-[#1e3a8a]">Join Now</button>
         </form>
-        {% if success %}
-            <p class="text-green-400 text-sm mt-4">Thanks for joining the waitlist!</p>
-        {% endif %}
-        <p class="text-sm mt-4">Join <b>15+</b> on the waitlist!</p>
+        <p class="text-sm mt-4">Secure a <strong>1-month free trial</strong> at launch—limited spots!</p>
     </footer>
 
     <script>
-        // Form submission
-        // document.querySelectorAll('form').forEach(form => {
-        //     form.addEventListener('submit', (e) => {
-        //         e.preventDefault();
-        //         alert('Thanks for joining the waitlist! We’ll email you soon.');
-        //         form.reset();
-        //     });
-        // });
-
         // Scroll animations with Intersection Observer
         const scrollElements = document.querySelectorAll('.scroll-animate');
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Stop observing once animated
+                    observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.2 });
-
         scrollElements.forEach(element => observer.observe(element));
     </script>
 </body>
