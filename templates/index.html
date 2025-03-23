@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7GZRYJ2VZ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S7GZRYJ2VZ');
+    </script>    
 </head>
 <body>
     <!-- Header -->
@@ -87,7 +97,7 @@
     <!-- Testimonial Section -->
     <section class="py-16 px-6 scroll-animate">
         <div class="max-w-2xl mx-auto text-center animate-on-load">
-            <p class="text-lg italic text-gray-600 mb-4">“NeatSheet turned my weekly reports from a 2-hour chore into a 5-minute task. Game-changer!”</p>
+            <p class="text-lg italic text-gray-600 mb-4">“NeatSheet has the opportunity to streamline my weekly Excel reports.”</p>
             <p class="font-semibold">— Sarah K., Small Business Owner</p>
         </div>
     </section>
@@ -105,7 +115,7 @@
         {% if success %}
             <p class="text-green-400 text-sm mt-4">Thanks for joining the waitlist!</p>
         {% endif %}
-        <p class="text-sm mt-4">Trusted by 100+ beta testers already.</p>
+        <p class="text-sm mt-4">Join <b>15+</b> on the waitlist!</p>
     </footer>
 
     <script>
